@@ -5,10 +5,16 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from weldlog.models import Weldlog
 from weldlog.serializers import Weldlogserializers
+from django.contrib.auth.models import User
+from django.db.models import Count
+from rest_framework import viewsets
 
-@csrf_exempt
-def Weldlogapi(request,id=0):
-    if request.method=='GET':
-        welds=Weldlog.objects.all()
-        weldlog_serializers=Weldlogserializers(welds,many=True)
-        return JsonResponse(weldlog_serializers.data,safe=False)
+
+
+
+class WeldlogViewSet(viewsets.ModelViewSet):
+    queryset = Weldlog.objects.values('line').annotate(weld=Count('joint'))
+    serializer_class = Weldlogserializers
+
+
+

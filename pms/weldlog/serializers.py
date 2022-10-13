@@ -4,6 +4,10 @@ from weldlog.models import Weldlog
 
 
 class Weldlogserializers(serializers.ModelSerializer):
+    weld=serializers.IntegerField()
     class Meta:
         model=Weldlog
-        fields = '__all__'
+        fields = ('line', 'weld','rtrate')
+
+
+

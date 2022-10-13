@@ -49,3 +49,4 @@ class Weldlog(models.Model):
     penalty=models.CharField(max_length=100,blank=True)
     tpno=models.CharField(max_length=100,blank=True)
     cancel=models.CharField(max_length=100,blank=True)
+    
