@@ -13,7 +13,7 @@ from rest_framework import viewsets
 
 
 class WeldlogViewSet(viewsets.ModelViewSet):
-    queryset = Weldlog.objects.values('line').annotate(weld=Count('joint'))
+    queryset = Weldlog.objects.all()
     serializer_class = Weldlogserializers
 
 
