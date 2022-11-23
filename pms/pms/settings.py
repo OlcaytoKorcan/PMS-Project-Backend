@@ -38,11 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'weldlog.apps.WeldlogConfig',
+    'app_weldlog.apps.AppWeldlogConfig',
     'rest_framework',
     'corsheaders',
 
 ]
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -82,12 +83,11 @@ WSGI_APPLICATION = 'pms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pms',
-        'USER' :'postgres',
-        'PASSWORD':'pms',
-        'HOST':'localhost',
-        'PORT':'5432',
-
+        'NAME': 'postgres',
+        'USER': 'project_user',
+        'PASSWORD': 'PMSteam123',
+        'HOST': 'pms-postgres-server.postgres.database.azure.com',
+        'PORT': '5432',
     }
 }
 
