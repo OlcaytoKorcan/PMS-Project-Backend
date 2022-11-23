@@ -1,5 +1,4 @@
 # Center-PMS
 
-npm install
 
-npm start
+py -m pip freeze > requirements.txt
